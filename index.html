@@ -1,10 +1,35 @@
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>After School Classes</title>
+  <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
-    
+  <div id="app">
+    <h1>{{ siteName }}</h1>
+    <ul>
+      <li v-for="lesson in lessons" :key="lesson.id">
+        {{ lesson.subject }} - {{ lesson.location }} - £{{ lesson.price }}
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          siteName: "After School Classes",
+          lessons: [
+            { id: 1, subject: "Math", location: "Hendon", price: 100, spaces: 5 },
+            { id: 2, subject: "Science", location: "Colindale", price: 90, spaces: 5 },
+            { id: 3, subject: "Music", location: "Brent Cross", price: 80, spaces: 5 }
+          ]
+        };
+      }
+    }).mount("#app");
+  </script>
 </body>
-</html> 
+</html>

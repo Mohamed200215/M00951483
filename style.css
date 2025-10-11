@@ -1,0 +1,14 @@
+/* Import the 'Bangers' font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+/* style title */
+.title {
+  text-align: center;          /* centers the title */
+  font-family: 'Bangers', cursive; /*comic-style font */
+  font-size: 3rem;             /* make it big */
+  color: #00b140;              /* green */
+  font-weight: bold;           /* bold text */
+  text-shadow: 2px 2px 4px #000; /* shadow for pop effect */
+  margin-top: 40px;
+  letter-spacing: 2px;
+}

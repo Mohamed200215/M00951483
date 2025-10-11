@@ -1,31 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"> <!-- Sets character encoding so text displays correctly -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>After School Classes</title>
+  <!-- Makes the page responsive and scale properly on phones and desktops -->
+  
+  <title>After School Classes</title> <!-- Page title shown in browser tab -->
 
-  <!-- This adds Vue 3 to the project using a CDN link -->
+  <!-- Loads Vue 3 from a CDN so we can use Vue features -->
   <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
 
-  <!-- The main area where Vue will display content -->
-  <div id="app">
-    <!-- Displays the website name from Vue data -->
-<h1 class="title">{{ siteName }}</h1>
+  <!-- Main page heading -->
+  <h1 class="title">AFTER School</h1>
 
+  <!-- Product grid where each "lesson" will appear like a product card -->
+  <ul class="product-grid">
+    <!-- v-for loops through each lesson in the Vue data -->
+    <li v-for="lesson in lessons" :key="lesson.id" class="card">
 
-    <!-- Loops through all lessons and shows each one -->
-    <ul>
-      <li v-for="lesson in lessons" :key="lesson.id">
-        {{ lesson.subject }} - {{ lesson.location }} - £{{ lesson.price }}
-      </li>
-    </ul>
+      <!-- Image section of the product card -->
+      <div class="image-wrap">
+        <!-- The :src binds the image path to each lesson -->
+        <!-- If the image fails to load, it shows a backup image -->
+        <img 
+          :src="lesson.image" 
+          :alt="lesson.subject"
+          @error="e => e.target.src = 'SOUL EATER NINTENDO DS GAME.png'"
+        >
+      </div>
+
+      <!-- Text area below the image showing subject, location, and price -->
+      <div class="card-body">
+        <h3 class="card-title">{{ lesson.subject }}</h3> <!-- Lesson name -->
+        <p class="meta">{{ lesson.location }}</p>        <!-- Lesson location -->
+        <div class="price">£{{ lesson.price }}</div>     <!-- Lesson price -->
+      </div>
+    </li>
+  </ul>
+
   </div>
 
-  <!-- This links to our external JavaScript file that runs the Vue app -->
+  <!-- Links your JavaScript file which contains the Vue app setup -->
   <script src="app.js"></script>
+
+  <!-- Links your external CSS file for all design and styling -->
   <link rel="stylesheet" href="style.css">
 
 </body>

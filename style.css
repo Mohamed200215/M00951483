@@ -1,14 +1,124 @@
-/* Import the 'Bangers' font from Google Fonts */
+/* Import the 'Bangers' font from Google Fonts — gives the title a comic-style look */
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
-/* style title */
+/* ---------- TITLE STYLE ---------- */
 .title {
-  text-align: center;          /* centers the title */
-  font-family: 'Bangers', cursive; /*comic-style font */
-  font-size: 3rem;             /* make it big */
-  color: #00b140;              /* green */
-  font-weight: bold;           /* bold text */
-  text-shadow: 2px 2px 4px #000; /* shadow for pop effect */
-  margin-top: 40px;
-  letter-spacing: 2px;
+  text-align: center;              /* centers the title horizontally */
+  font-family: 'Bangers', cursive; /* applies the comic-style font */
+  font-size: 3rem;                 /* makes the title big */
+  color: #00b140;                  /* bright green color */
+  font-weight: bold;               /* makes the text bold */
+  text-shadow: 2px 2px 4px #000;   /* adds a small shadow for depth */
+  margin-top: 40px;                /* adds space above the title */
+  letter-spacing: 2px;             /* adds spacing between letters */
+}
+
+/* ---------- LESSON LIST (SIDE BY SIDE) ---------- */
+.lesson-list {
+  list-style: none;        /* removes bullet points */
+  padding: 0;              /* removes default padding */
+  margin: 40px auto;       /* centers the list and adds spacing */
+  max-width: 700px;        /* limits the width of the list */
+}
+
+/* Each lesson row styling */
+.lesson-item {
+  display: flex;                    /* places elements in a row */
+  justify-content: space-between;   /* spreads subject, location, price evenly */
+  align-items: center;              /* keeps items aligned vertically */
+  background: #f0fdf4;              /* light green background color */
+  padding: 12px 18px;               /* adds space inside each box */
+  border-radius: 8px;               /* rounds the corners */
+  margin-bottom: 12px;              /* space between rows */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* adds a small shadow */
+  font-size: 1.1rem;                /* slightly larger text */
+}
+
+/* Individual text parts in the row */
+.subject {
+  font-weight: bold;        /* makes subject text bold */
+  color: #00b140;           /* TMNT green color for subjects */
+}
+
+.location {
+  color: #333;              /* dark grey for location */
+}
+
+.price {
+  color: #ffcc00;           /* yellow color for price */
+  font-weight: bold;        /* makes the price stand out */
+}
+
+/* ---------- PRODUCT GRID (SHOP LAYOUT) ---------- */
+.product-grid {
+  list-style: none;  /* no bullets */
+  padding: 0;
+  margin: 32px auto;
+  max-width: 1100px; /* centers and limits the grid width */
+  display: grid;     /* creates a grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* makes flexible columns */
+  gap: 24px;         /* space between cards */
+}
+
+/* Each product card */
+.card {
+  background: #fff;                 /* white background */
+  border-radius: 12px;              /* rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,.08); /* soft shadow */
+  overflow: hidden;                 /* hides overflowed content */
+  display: flex;
+  flex-direction: column;           /* stacks image and text vertically */
+}
+
+/* ---------- IMAGE AREA ---------- */
+.image-wrap {
+  aspect-ratio: 4 / 5;     /* keeps all product images same height ratio */
+  background: #f3f4f6;     /* light grey background behind image */
+  overflow: hidden;        /* hides overflowing image edges */
+}
+
+/* Product image styling */
+.image-wrap img {
+  width: 100%;             /* image fills container width */
+  height: 100%;            /* image fills container height */
+  object-fit: cover;       /* crops image to fit the box neatly */
+  display: block;
+  transition: transform .25s ease; /* smooth hover zoom */
+}
+
+/* Zoom effect when hovering over a card */
+.card:hover .image-wrap img { 
+  transform: scale(1.03); 
+}
+
+/* ---------- CARD BODY (TEXT AREA) ---------- */
+.card-body {
+  padding: 14px 16px 16px;       /* adds padding inside card */
+  display: grid;
+  grid-template-columns: 1fr auto; /* text on left, price on right */
+  row-gap: 6px;                  /* space between rows of text */
+  align-items: center;           /* keeps text vertically aligned */
+}
+
+/* Card title styling */
+.card-title {
+  grid-column: 1 / 2;   /* stays in the left column */
+  font-size: 1rem;      /* normal size */
+  font-weight: 700;     /* bold text */
+  margin: 0;            /* removes default margin */
+}
+
+/* Location text below title */
+.meta {
+  grid-column: 1 / 2;   /* stays under the title */
+  color: #555;          /* grey text color */
+  margin: 0;
+}
+
+/* Price text on the right side */
+.price {
+  grid-column: 2 / 3;   /* moves to right column */
+  font-weight: 800;     /* extra bold */
+  font-size: 1.05rem;   /* slightly larger text */
+  color: #111;          /* dark color for visibility */
 }

@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>After School Classes</title>
 
-  <!-- This adds Vue 3 to the project from the CDN link -->
+  <!-- This adds Vue 3 to the project using a CDN link -->
   <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
 
-  <!-- This is the main app area where Vue will display content -->
+  <!-- The main area where Vue will display content -->
   <div id="app">
-    <!-- Display the site name stored in Vue data -->
+    <!-- Displays the website name from Vue data -->
     <h1>{{ siteName }}</h1>
 
-    <!-- Loop through all lessons and show each one -->
+    <!-- Loops through all lessons and shows each one -->
     <ul>
       <li v-for="lesson in lessons" :key="lesson.id">
         {{ lesson.subject }} - {{ lesson.location }} - £{{ lesson.price }}
@@ -23,26 +23,7 @@
     </ul>
   </div>
 
-  <!-- This script creates and mounts the Vue app -->
-  <script>
-    // Pull out the createApp function from Vue
-    const { createApp } = Vue;
-
-    // Create a new Vue app
-    createApp({
-      // The data function stores the app’s information
-      data() {
-        return {
-          siteName: "After School Classes", // The title of the website
-          lessons: [ // A list of lessons with details
-            { id: 1, subject: "Math", location: "Hendon", price: 100, spaces: 5 },
-            { id: 2, subject: "Science", location: "Colindale", price: 90, spaces: 5 },
-            { id: 3, subject: "Music", location: "Brent Cross", price: 80, spaces: 5 }
-          ]
-        };
-      }
-    // Mount the Vue app to the div with id="app"
-    }).mount("#app");
-  </script>
+  <!-- This links to our external JavaScript file that runs the Vue app -->
+  <script src="app.js"></script>
 </body>
 </html>

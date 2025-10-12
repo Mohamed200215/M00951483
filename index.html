@@ -16,10 +16,12 @@
 
   <ul class="product-grid">
     <li v-for="lesson in lessons" :key="lesson.id" class="card">
-      <div class="image-wrap">
-        <img :src="lesson.image" :alt="lesson.subject"
-             @error="e => e.target.src = 'SOUL EATER NINTENDO DS GAME.png'">
-      </div>
+      
+<div class="image-wrap">
+  <img :src="lesson.image" :alt="lesson.subject">
+</div>
+
+
       <div class="card-body">
         <h3 class="card-title">{{ lesson.subject }}</h3>
         <p class="meta">{{ lesson.location }}</p>

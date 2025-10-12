@@ -11,36 +11,23 @@
   <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
+<div id="app">
+  <h1 class="title">{{ siteName }}</h1>
 
-  <!-- Main page heading -->
-  <h1 class="title">AFTER School</h1>
-
-  <!-- Product grid where each "lesson" will appear like a product card -->
   <ul class="product-grid">
-    <!-- v-for loops through each lesson in the Vue data -->
     <li v-for="lesson in lessons" :key="lesson.id" class="card">
-
-      <!-- Image section of the product card -->
       <div class="image-wrap">
-        <!-- The :src binds the image path to each lesson -->
-        <!-- If the image fails to load, it shows a backup image -->
-        <img 
-          :src="lesson.image" 
-          :alt="lesson.subject"
-          @error="e => e.target.src = 'SOUL EATER NINTENDO DS GAME.png'"
-        >
+        <img :src="lesson.image" :alt="lesson.subject"
+             @error="e => e.target.src = 'SOUL EATER NINTENDO DS GAME.png'">
       </div>
-
-      <!-- Text area below the image showing subject, location, and price -->
       <div class="card-body">
-        <h3 class="card-title">{{ lesson.subject }}</h3> <!-- Lesson name -->
-        <p class="meta">{{ lesson.location }}</p>        <!-- Lesson location -->
-        <div class="price">£{{ lesson.price }}</div>     <!-- Lesson price -->
+        <h3 class="card-title">{{ lesson.subject }}</h3>
+        <p class="meta">{{ lesson.location }}</p>
+        <div class="price">£{{ lesson.price }}</div>
       </div>
     </li>
   </ul>
-
-  </div>
+</div>
 
   <!-- Links your JavaScript file which contains the Vue app setup -->
   <script src="app.js"></script>

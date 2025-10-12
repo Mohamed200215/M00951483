@@ -4,7 +4,6 @@ createApp({
   data() {
     return {
       siteName: "After School Classes",
-      // Put your picture URLs here, or leave empty and use the picker
       lessons: [
         { id: 1, subject: "Math",    location: "Hendon",     price: 100, image: "" },
         { id: 2, subject: "Science", location: "Colindale",  price: 90,  image: "" },

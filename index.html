@@ -1,41 +1,51 @@
 <!doctype html>
+<!-- 
+  index.html
+  Main HTML structure for the After School Classes project.
+  It connects to Vue.js for dynamic features and links to the CSS (for styling)
+  and JavaScript (for data and logic).
+-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8"> <!-- Sets character encoding so text displays correctly -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Makes the page responsive and scale properly on phones and desktops -->
-  
-  <title>After School Classes</title> <!-- Page title shown in browser tab -->
+  <meta charset="UTF-8"> <!-- Ensures characters and symbols display correctly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes site responsive on all devices -->
+  <title>After School Classes</title> <!-- The page title shown in the browser tab -->
 
-  <!-- Loads Vue 3 from a CDN so we can use Vue features -->
+  <!-- Import Vue 3 library from CDN (Content Delivery Network) -->
   <script src="https://unpkg.com/vue@3"></script>
+
+  <!-- Link to the CSS file for all styles and layouts -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="app">
-  <h1 class="title">{{ siteName }}</h1>
+  <!-- Vue app mount point: Vue controls everything inside this div -->
+  <div id="app">
 
-  <ul class="product-grid">
-    <li v-for="lesson in lessons" :key="lesson.id" class="card">
-      
-<div class="image-wrap">
-  <img :src="lesson.image" :alt="lesson.subject">
-</div>
+    <!-- The main heading that shows the site name -->
+    <h1 class="title">{{ siteName }}</h1>
 
+    <!-- A grid layout that displays each lesson as a card -->
+    <!-- v-for loops through each lesson in the data -->
+    <ul class="product-grid">
+      <li v-for="lesson in lessons" :key="lesson.id" class="card">
 
-      <div class="card-body">
-        <h3 class="card-title">{{ lesson.subject }}</h3>
-        <p class="meta">{{ lesson.location }}</p>
-        <div class="price">£{{ lesson.price }}</div>
-      </div>
-    </li>
-  </ul>
-</div>
+        <!-- Image section: shows the lesson’s picture -->
+        <div class="image-wrap">
+          <!-- Vue binds each image source dynamically -->
+          <img :src="lesson.image" :alt="lesson.subject">
+        </div>
 
-  <!-- Links your JavaScript file which contains the Vue app setup -->
+        <!-- Text details below the image -->
+        <div class="card-body">
+          <h3 class="card-title">{{ lesson.subject }}</h3> <!-- Lesson subject -->
+          <p class="meta">{{ lesson.location }}</p>        <!-- Lesson location -->
+          <div class="price">£{{ lesson.price }}</div>     <!-- Lesson price -->
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Connects Vue logic and data from app.js -->
   <script src="app.js"></script>
-
-  <!-- Links your external CSS file for all design and styling -->
-  <link rel="stylesheet" href="style.css">
-
 </body>
 </html>

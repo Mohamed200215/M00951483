@@ -105,3 +105,25 @@ body {
   background-position: center;  /* center it */
   background-repeat: no-repeat; /* stop repeating */
 }
+
+/* Full-width row for actions, centered */
+.card-actions {
+  grid-column: 1 / -1;        /* span both columns */
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;     /* center the button */
+}
+
+/* Simple primary button */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #00b140;         /* TMNT green */
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .08s ease, opacity .15s ease;
+}
+.btn:hover { opacity: 0.9; }
+.btn:active { transform: scale(0.98); }

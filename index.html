@@ -38,14 +38,17 @@
         </div>
 
         <!-- Text details below the image -->
-        <div class="card-body">
-          <h3 class="card-title">{{ lesson.subject }}</h3> <!-- Lesson subject -->
-          <p class="meta">{{ lesson.location }}</p>        <!-- Lesson location -->
-          <div class="price">£{{ lesson.price }}</div>     <!-- Lesson price -->
-        </div>
-      </li>
-    </ul>
+<div class="card-body">
+  <h3 class="card-title">{{ lesson.subject }}</h3>
+  <p class="meta">{{ lesson.location }}</p>
+  <div class="price">£{{ lesson.price }}</div>
+
+  <!-- Button row (full width, centered) -->
+  <div class="card-actions">
+    <button class="btn" @click="book(lesson)">Book</button>
   </div>
+</div>
+
 
   <!-- Connects Vue logic and data from app.js -->
   <script src="app.js"></script>

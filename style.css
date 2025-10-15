@@ -133,7 +133,7 @@ body {
   position: fixed;           /* stays in one spot on screen */
   top: 20px;                 /* distance from top */
   right: 20px;               /* distance from right */
-  background-color: #00b140; /* TMNT green */
+  background-color: #ffffff; /* TMNT green */
   color: white;              /* white cart icon */
   border: none;
   border-radius: 50%;        /* makes it round */
@@ -150,3 +150,13 @@ body {
   transform: scale(1.1);
   opacity: 0.9;
 }
+
+.badge{
+  position:absolute; top:-6px; right:-6px;
+  background:#ff3b3b; color:#fff; border-radius:999px;
+  min-width:20px; height:20px; padding:0 6px;
+  font-size:12px; display:flex; align-items:center; justify-content:center;
+  border:2px solid #fff;
+}
+.btn:disabled{ opacity:.5; cursor:not-allowed; }
+

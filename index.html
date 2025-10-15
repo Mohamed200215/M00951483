@@ -25,7 +25,9 @@
      <!-- Floating cart button -->
 <button class="cart-btn" @click="viewCart">
   🛒
+  <span class="badge" v-if="cartCount">{{ cartCount }}</span>
 </button>
+
 
 <div class="banner">
   <h1 class="title">{{ siteName }}</h1>

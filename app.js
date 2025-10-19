@@ -6,9 +6,9 @@ createApp({
       siteName: "After School Classes",
       cart: JSON.parse(localStorage.getItem("cart") || "[]"), // persist
       lessons: [
-        { id: 1, subject: "Math",    location: "Hendon",     price: 100, spaces: 5, image: "images/math.jpg" },
-        { id: 2, subject: "Science", location: "Colindale",  price: 90,  spaces: 5, image: "images/science.jpg" },
-        { id: 3, subject: "Music",   location: "Brent Cross",price: 80,  spaces: 5, image: "images/music.jpg" }
+        { id: 1, subject: "Math",    location: "Location: Hendon",     price: 100, spaces: 5, image: "images/math.jpg" },
+        { id: 2, subject: "Science", location: "Location: Colindale",  price: 90,  spaces: 5, image: "images/science.jpg" },
+        { id: 3, subject: "Music",   location: "Location: Brent Cross",price: 80,  spaces: 5, image: "images/music.jpg" }
       ]
     };
   },
